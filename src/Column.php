@@ -7,7 +7,6 @@
 	{
 		const OPTION_UNSIGNED = 'UNSIGNED';
 		const OPTION_ZEROFILL = 'ZEROFILL';
-		const OPTION_BINARY = 'BINARY';
 
 		/** @var string */
 		private $name;
