@@ -10,7 +10,7 @@
 		const ACTION_CASCADE = 'CASCADE';
 		const ACTION_SET_NULL = 'SET_NULL';
 
-		/** @var string|NULL */
+		/** @var string */
 		private $name;
 
 		/** @var string[] */
@@ -19,13 +19,13 @@
 		/** @var string */
 		private $targetTable;
 
-		/** @var string */
+		/** @var string[] */
 		private $targetColumns;
 
-		/** @var int */
+		/** @var string */
 		private $onUpdateAction = self::ACTION_RESTRICT;
 
-		/** @var int */
+		/** @var string */
 		private $onDeleteAction = self::ACTION_RESTRICT;
 
 

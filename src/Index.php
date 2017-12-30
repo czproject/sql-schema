@@ -21,7 +21,7 @@
 
 
 		/**
-		 * @param  string|NULL
+		 * @param  string
 		 * @param  string
 		 * @param  string[]|string
 		 */
@@ -41,7 +41,7 @@
 
 
 		/**
-		 * @return string|NULL
+		 * @return string
 		 */
 		public function getName()
 		{

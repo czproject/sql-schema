@@ -8,7 +8,7 @@
 		const ASC = 'ASC';
 		const DESC = 'DESC';
 
-		/** @var string|NULL */
+		/** @var string */
 		private $name;
 
 		/** @var string */
@@ -52,7 +52,7 @@
 
 
 		/**
-		 * @param  int
+		 * @param  string
 		 * @return self
 		 */
 		public function setOrder($order)
@@ -69,7 +69,7 @@
 
 
 		/**
-		 * @return int
+		 * @return string
 		 */
 		public function getOrder()
 		{
