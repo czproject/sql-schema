@@ -29,8 +29,8 @@ $table = $schema->addTable('book');
 $table->addColumn('id', 'INT', NULL, array('UNSIGNED'));
 $table->addColumn('name', 'VARCHAR', array(200));
 $table->addColumn('author_id', 'INT', NULL, array('UNSIGNED'));
-$table->addIndex(NULL, Index::TYPE_PRIMARY, 'id');
-$table->addIndex('name_author_id', Index::TYPE_UNIQUE, array('name', 'author_id'));
+$table->addIndex(NULL, 'id', Index::TYPE_PRIMARY);
+$table->addIndex('name_author_id', array('name', 'author_id'), Index::TYPE_UNIQUE);
 
 $schema->getTables();
 ```

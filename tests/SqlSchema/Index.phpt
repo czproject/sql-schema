@@ -7,7 +7,7 @@ require __DIR__ . '/../bootstrap.php';
 
 
 test(function () {
-	$index = new CzProject\SqlSchema\Index('index_name', Index::TYPE_PRIMARY, 'id');
+	$index = new CzProject\SqlSchema\Index('index_name', 'id', Index::TYPE_PRIMARY);
 
 	Assert::same('index_name', $index->getName());
 	Assert::same('PRIMARY', $index->getType());
@@ -18,14 +18,14 @@ test(function () {
 
 
 test(function () {
-	$index = new CzProject\SqlSchema\Index('id_name', Index::TYPE_INDEX, array('id', 'name'));
+	$index = new CzProject\SqlSchema\Index('id_name', array('id', 'name'));
 	Assert::same('id_name', $index->getName());
 });
 
 
 test(function () {
 	Assert::exception(function () {
-		$index = new CzProject\SqlSchema\Index('', 'BLA');
+		$index = new CzProject\SqlSchema\Index('', array(), 'BLA');
 
 	}, 'CzProject\SqlSchema\OutOfRangeException', "Index type 'BLA' not found.");
 });

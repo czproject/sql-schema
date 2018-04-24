@@ -19,8 +19,8 @@ test(function () {
 	Assert::exception(function () {
 		$table = new Table('book');
 		$table->addColumn('id', 'INT');
-		$table->addIndex('id', Index::TYPE_PRIMARY);
-		$table->addIndex('primary', Index::TYPE_PRIMARY);
+		$table->addIndex('id', array(), Index::TYPE_PRIMARY);
+		$table->addIndex('primary', array(), Index::TYPE_PRIMARY);
 		$table->validate();
 	}, 'CzProject\\SqlSchema\\DuplicateException', "Duplicated primary index in table 'book'.");
 });

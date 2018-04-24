@@ -134,11 +134,11 @@
 
 		/**
 		 * @param  string|Index|NULL
-		 * @param  string
 		 * @param  string[]|string
+		 * @param  string
 		 * @return Index
 		 */
-		public function addIndex($name, $type = Index::TYPE_INDEX, $columns = array())
+		public function addIndex($name, $columns = array(), $type = Index::TYPE_INDEX)
 		{
 			$index = NULL;
 
@@ -147,7 +147,7 @@
 				$name = $index->getName();
 
 			} else {
-				$index = new Index($name, $type, $columns);
+				$index = new Index($name, $columns, $type);
 				$name = $index->getName();
 			}
 

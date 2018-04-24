@@ -22,10 +22,10 @@
 
 		/**
 		 * @param  string
-		 * @param  string
 		 * @param  string[]|string
+		 * @param  string
 		 */
-		public function __construct($name, $type = self::TYPE_INDEX, $columns = array())
+		public function __construct($name, $columns = array(), $type = self::TYPE_INDEX)
 		{
 			$this->name = $name;
 			$this->setType($type);
