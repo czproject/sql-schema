@@ -6,9 +6,9 @@
 	class ForeignKey
 	{
 		const ACTION_RESTRICT = 'RESTRICT';
-		const ACTION_NO_ACTION = 'NO_ACTION';
+		const ACTION_NO_ACTION = 'NO ACTION';
 		const ACTION_CASCADE = 'CASCADE';
-		const ACTION_SET_NULL = 'SET_NULL';
+		const ACTION_SET_NULL = 'SET NULL';
 
 		/** @var string */
 		private $name;
