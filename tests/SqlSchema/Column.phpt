@@ -17,6 +17,7 @@ test(function () {
 	Assert::same(array(), $column->getParameters());
 	Assert::null($column->getComment());
 	Assert::null($column->getDefaultValue());
+	Assert::false($column->hasOption('UNSIGNED'));
 });
 
 
@@ -47,4 +48,5 @@ test(function () {
 	Assert::same(array(11), $column->getParameters());
 	Assert::same('column comment', $column->getComment());
 	Assert::same(123, $column->getDefaultValue());
+	Assert::true($column->hasOption('UNSIGNED'));
 });

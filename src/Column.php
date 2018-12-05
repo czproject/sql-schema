@@ -147,6 +147,15 @@
 
 
 		/**
+		 * @return array
+		 */
+		public function hasOption($name)
+		{
+			return array_key_exists($name, $this->options);
+		}
+
+
+		/**
 		 * @param  bool
 		 * @return self
 		 */
