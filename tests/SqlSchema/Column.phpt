@@ -46,4 +46,5 @@ test(function () {
 	), $column->getOptions());
 	Assert::same(array(11), $column->getParameters());
 	Assert::same('column comment', $column->getComment());
+	Assert::same(123, $column->getDefaultValue());
 });
