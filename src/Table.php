@@ -112,7 +112,8 @@ class Table
             throw new DuplicateException("Column '$name' in table '{$this->getName()}' already exists.");
         }
 
-        return $this->columns[$name] = $column;
+        $this->columns[$name] = $column;
+        return $this;
     }
 
     /**
@@ -157,7 +158,8 @@ class Table
             throw new DuplicateException("Index '$name' in table '{$this->getName()}' already exists.");
         }
 
-        return $this->indexes[$name] = $index;
+        $this->indexes[$name] = $index;
+        return $this;
     }
 
     /**
@@ -203,7 +205,8 @@ class Table
             throw new DuplicateException("Foreign key '$name' in table '{$this->getName()}' already exists.");
         }
 
-        return $this->foreignKeys[$name] = $foreignKey;
+        $this->foreignKeys[$name] = $foreignKey;
+        return $this;
     }
 
     /**

@@ -85,7 +85,8 @@ class Index
             $column = new IndexColumn($column);
         }
 
-        return $this->columns[] = $column;
+        $this->columns[] = $column;
+        return $this;
     }
 
     /**
