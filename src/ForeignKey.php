@@ -71,7 +71,8 @@ class ForeignKey
      */
     public function addColumn($column)
     {
-        return $this->columns[] = $column;
+        $this->columns[] = $column;
+        return $this;
     }
 
     /**
@@ -106,7 +107,8 @@ class ForeignKey
      */
     public function addTargetColumn($targetColumn)
     {
-        return $this->targetColumns[] = $targetColumn;
+        $this->targetColumns[] = $targetColumn;
+        return $this;
     }
 
     /**
