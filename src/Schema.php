@@ -28,8 +28,7 @@ class Schema
             throw new DuplicateException("Table '$name' already exists.");
         }
 
-        $this->tables[$name] = $table;
-        return $this;
+        return $this->tables[$name] = $table;
     }
 
     /**
