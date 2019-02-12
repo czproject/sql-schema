@@ -1,57 +1,54 @@
 <?php
 
-	namespace CzProject\SqlSchema;
+namespace CzProject\SqlSchema;
 
+use CzProject\SqlSchema\Exceptions\DuplicateException;
 
-	class Schema
-	{
-		/** @var array  [name => Table] */
-		private $tables = array();
+class Schema
+{
+    /** @var array  [name => Table] */
+    private $tables = array();
 
+    /**
+    * @param  string|Table
+    * @return Table
+    */
+    public function addTable($name)
+    {
+        $table = null;
 
-		/**
-		 * @param  string|Table
-		 * @return Table
-		 */
-		public function addTable($name)
-		{
-			$table = NULL;
+        if ($name instanceof Table) {
+            $table = $name;
+            $name = $table->getName();
+        } else {
+            $table = new Table($name);
+        }
 
-			if ($name instanceof Table) {
-				$table = $name;
-				$name = $table->getName();
+        if (isset($this->tables[$name])) {
+            throw new DuplicateException("Table '$name' already exists.");
+        }
 
-			} else {
-				$table = new Table($name);
-			}
+        return $this->tables[$name] = $table;
+    }
 
-			if (isset($this->tables[$name])) {
-				throw new DuplicateException("Table '$name' already exists.");
-			}
+    /**
+    * @param  string
+    * @return Table|NULL
+    */
+    public function getTable($name)
+    {
+        if (isset($this->tables[$name])) {
+            return $this->tables[$name];
+        }
 
-			return $this->tables[$name] = $table;
-		}
+        return null;
+    }
 
-
-		/**
-		 * @param  string
-		 * @return Table|NULL
-		 */
-		public function getTable($name)
-		{
-			if (isset($this->tables[$name])) {
-				return $this->tables[$name];
-			}
-
-			return NULL;
-		}
-
-
-		/**
-		 * @return Table[]
-		 */
-		public function getTables()
-		{
-			return $this->tables;
-		}
-	}
+    /**
+    * @return Table[]
+    */
+    public function getTables()
+    {
+        return $this->tables;
+    }
+}

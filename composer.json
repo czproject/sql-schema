@@ -15,6 +15,10 @@
 	"autoload": {
 		"classmap": ["src/"]
 	},
+    "psr-4": {
+      "CzProject\\SqlSchema\\": "src",
+      "CzProject\\SqlSchema\\Exceptions": "src/exceptions"
+    },
 	"require-dev": {
 		"nette/tester": "^1.7"
 	}
