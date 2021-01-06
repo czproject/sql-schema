@@ -17,7 +17,7 @@ Library for describe of the database schema.
 composer require czproject/sql-schema
 ```
 
-CzProject\SqlSchema requires PHP 5.3.0 or later.
+CzProject\SqlSchema requires PHP 5.6.0 or later.
 
 
 ## Usage
