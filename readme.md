@@ -1,7 +1,7 @@
 
 # CzProject\SqlSchema
 
-[![Build Status](https://travis-ci.org/czproject/sql-schema.svg?branch=master)](https://travis-ci.org/czproject/sql-schema)
+[![Tests Status](https://github.com/czproject/sql-schema/workflows/Tests/badge.svg)](https://github.com/czproject/sql-schema/actions)
 
 Library for describe of the database schema.
 
