@@ -6,7 +6,7 @@
 	class Schema
 	{
 		/** @var array  [name => Table] */
-		private $tables = array();
+		private $tables = [];
 
 
 		/**

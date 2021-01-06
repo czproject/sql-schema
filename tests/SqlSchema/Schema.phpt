@@ -9,7 +9,7 @@ require __DIR__ . '/../bootstrap.php';
 
 test(function () {
 	$schema = new Schema;
-	Assert::same(array(), $schema->getTables());
+	Assert::same([], $schema->getTables());
 	Assert::null($schema->getTable('book'));
 
 	$schema->addTable('book');

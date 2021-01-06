@@ -14,7 +14,7 @@
 		private $name;
 
 		/** @var string[] */
-		private $columns = array();
+		private $columns = [];
 
 		/** @var string */
 		private $targetTable;
@@ -35,13 +35,13 @@
 		 * @param  string
 		 * @param  string[]|string
 		 */
-		public function __construct($name, $columns = array(), $targetTable, $targetColumns = array())
+		public function __construct($name, $columns = [], $targetTable, $targetColumns = [])
 		{
 			$this->name = $name;
 			$this->setTargetTable($targetTable);
 
 			if (!is_array($columns)) {
-				$columns = array($columns);
+				$columns = [$columns];
 			}
 
 			foreach ($columns as $column) {
@@ -49,7 +49,7 @@
 			}
 
 			if (!is_array($targetColumns)) {
-				$targetColumns = array($targetColumns);
+				$targetColumns = [$targetColumns];
 			}
 
 			foreach ($targetColumns as $targetColumn) {

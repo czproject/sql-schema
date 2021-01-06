@@ -10,9 +10,9 @@ test(function () {
 	$foreignKey = new ForeignKey('fk_name', 'author_id', 'author', 'id');
 
 	Assert::same('fk_name', $foreignKey->getName());
-	Assert::same(array('author_id'), $foreignKey->getColumns());
+	Assert::same(['author_id'], $foreignKey->getColumns());
 	Assert::same('author', $foreignKey->getTargetTable());
-	Assert::same(array('id'), $foreignKey->getTargetColumns());
+	Assert::same(['id'], $foreignKey->getTargetColumns());
 	Assert::same($foreignKey::ACTION_RESTRICT, $foreignKey->getOnUpdateAction());
 	Assert::same($foreignKey::ACTION_RESTRICT, $foreignKey->getOnDeleteAction());
 });

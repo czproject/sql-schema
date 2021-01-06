@@ -12,16 +12,16 @@
 		private $comment;
 
 		/** @var array  [name => Column] */
-		private $columns = array();
+		private $columns = [];
 
 		/** @var array  [name => Index] */
-		private $indexes = array();
+		private $indexes = [];
 
 		/** @var array  [name => ForeignKey] */
-		private $foreignKeys = array();
+		private $foreignKeys = [];
 
 		/** @var array  [name => value] */
-		private $options = array();
+		private $options = [];
 
 
 		/**
@@ -90,7 +90,7 @@
 		 * @param  array OPTION => NULL
 		 * @return Column
 		 */
-		public function addColumn($name, $type = NULL, $parameters = NULL, array $options = array())
+		public function addColumn($name, $type = NULL, $parameters = NULL, array $options = [])
 		{
 			$column = NULL;
 
@@ -138,7 +138,7 @@
 		 * @param  string
 		 * @return Index
 		 */
-		public function addIndex($name, $columns = array(), $type = Index::TYPE_INDEX)
+		public function addIndex($name, $columns = [], $type = Index::TYPE_INDEX)
 		{
 			$index = NULL;
 
@@ -188,7 +188,7 @@
 		 * @param  string[]|string
 		 * @return ForeignKey
 		 */
-		public function addForeignKey($name, $columns = array(), $targetTable = NULL, $targetColumns = array())
+		public function addForeignKey($name, $columns = [], $targetTable = NULL, $targetColumns = [])
 		{
 			$foreignKey = NULL;
 

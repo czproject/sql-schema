@@ -12,11 +12,11 @@ require __DIR__ . '/../bootstrap.php';
 test(function () {
 	$table = new Table('book');
 	Assert::same('book', $table->getName());
-	Assert::same(array(), $table->getColumns());
-	Assert::same(array(), $table->getIndexes());
+	Assert::same([], $table->getColumns());
+	Assert::same([], $table->getIndexes());
 	Assert::null($table->getComment());
-	Assert::same(array(), $table->getOptions());
-	Assert::same(array(), $table->getForeignKeys());
+	Assert::same([], $table->getOptions());
+	Assert::same([], $table->getForeignKeys());
 });
 
 
@@ -26,9 +26,9 @@ test(function () {
 	$table->setOption('ENGINE', 'InnoDB');
 
 	Assert::same('table comment', $table->getComment());
-	Assert::same(array(
+	Assert::same([
 		'ENGINE' => 'InnoDB',
-	), $table->getOptions());
+	], $table->getOptions());
 });
 
 
@@ -36,9 +36,9 @@ test(function () {
 	$table = new Table('book');
 	$table->addForeignKey(NULL, 'author_id', 'author', 'id');
 
-	Assert::same(array(
+	Assert::same([
 		'CONSTRAINT  FOREIGN KEY (author_id) REFERENCES author (id)',
-	), format($table->getForeignKeys()));
+	], format($table->getForeignKeys()));
 });
 
 

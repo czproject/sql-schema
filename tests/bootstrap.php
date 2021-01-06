@@ -16,7 +16,7 @@ function test($cb)
 function format($obj)
 {
 	if (is_array($obj)) {
-		$output = array();
+		$output = [];
 
 		foreach ($obj as $item) {
 			$output[] = format($item);
@@ -26,7 +26,7 @@ function format($obj)
 	}
 
 	if ($obj instanceof SqlSchema\Schema) {
-		$output = array();
+		$output = [];
 
 		foreach ($obj->getTables() as $table) {
 			$output[$table->getName()] = format($table);
@@ -35,7 +35,7 @@ function format($obj)
 		return $output;
 
 	} elseif ($obj instanceof SqlSchema\Table) {
-		$output = array();
+		$output = [];
 
 		foreach ($obj->getColumns() as $column) {
 			$output[] = format($column);

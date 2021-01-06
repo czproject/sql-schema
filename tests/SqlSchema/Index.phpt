@@ -11,21 +11,21 @@ test(function () {
 
 	Assert::same('index_name', $index->getName());
 	Assert::same('PRIMARY', $index->getType());
-	Assert::same(array(
+	Assert::same([
 		'id ASC'
-	), format($index->getColumns()));
+	], format($index->getColumns()));
 });
 
 
 test(function () {
-	$index = new CzProject\SqlSchema\Index('id_name', array('id', 'name'));
+	$index = new CzProject\SqlSchema\Index('id_name', ['id', 'name']);
 	Assert::same('id_name', $index->getName());
 });
 
 
 test(function () {
 	Assert::exception(function () {
-		$index = new CzProject\SqlSchema\Index('', array(), 'BLA');
+		$index = new CzProject\SqlSchema\Index('', [], 'BLA');
 
 	}, 'CzProject\SqlSchema\OutOfRangeException', "Index type 'BLA' not found.");
 });

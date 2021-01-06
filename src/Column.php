@@ -15,10 +15,10 @@
 		private $type;
 
 		/** @var array */
-		private $parameters = array();
+		private $parameters = [];
 
 		/** @var array */
-		private $options = array();
+		private $options = [];
 
 		/** @var bool */
 		private $nullable = FALSE;
@@ -39,7 +39,7 @@
 		 * @param  array|string|NULL
 		 * @param  array  [OPTION => VALUE, OPTION2]
 		 */
-		public function __construct($name, $type, array $parameters = NULL, array $options = array())
+		public function __construct($name, $type, array $parameters = NULL, array $options = [])
 		{
 			$this->name = $name;
 			$this->setType($type);
@@ -84,10 +84,10 @@
 		public function setParameters($parameters)
 		{
 			if ($parameters === NULL) {
-				$parameters = array();
+				$parameters = [];
 
 			} elseif (!is_array($parameters)) {
-				$parameters = array($parameters);
+				$parameters = [$parameters];
 			}
 
 			$this->parameters = $parameters;
@@ -122,7 +122,7 @@
 		 */
 		public function setOptions(array $options)
 		{
-			$this->options = array();
+			$this->options = [];
 
 			foreach ($options as $k => $v) {
 				if (is_int($k)) {
