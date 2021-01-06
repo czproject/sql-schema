@@ -11,7 +11,7 @@ test(function () {
 	Assert::exception(function () {
 		$table = new Table('book');
 		$table->validate();
-	}, 'CzProject\\SqlSchema\\EmptyException', "Table 'book' hasn't columns.");
+	}, CzProject\SqlSchema\EmptyException::class, "Table 'book' hasn't columns.");
 });
 
 
@@ -22,7 +22,7 @@ test(function () {
 		$table->addIndex('id', [], Index::TYPE_PRIMARY);
 		$table->addIndex('primary', [], Index::TYPE_PRIMARY);
 		$table->validate();
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Duplicated primary index in table 'book'.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Duplicated primary index in table 'book'.");
 });
 
 

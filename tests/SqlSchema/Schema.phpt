@@ -24,7 +24,7 @@ test(function () {
 		$schema->addTable('book');
 		$schema->addTable('book');
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Table 'book' already exists.");
 
 
 	Assert::exception(function () {
@@ -34,5 +34,5 @@ test(function () {
 		$book = new Table('book');
 		$schema->addTable($book);
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Table 'book' already exists.");
 });

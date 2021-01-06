@@ -21,5 +21,5 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		$column = new CzProject\SqlSchema\IndexColumn('id', 'BLA');
-	}, 'CzProject\SqlSchema\OutOfRangeException', "Order type 'BLA' not found.");
+	}, CzProject\SqlSchema\OutOfRangeException::class, "Order type 'BLA' not found.");
 });

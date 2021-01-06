@@ -65,14 +65,14 @@ test(function () {
 		$table->addColumn('id', 'INT');
 		$table->addColumn('id', 'TINYINT');
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Column 'id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Column 'id' in table 'book' already exists.");
 
 	Assert::exception(function () {
 		$table = new Table('book');
 		$table->addColumn('id', 'INT');
 		$table->addColumn(new Column('id', 'INT'));
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Column 'id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Column 'id' in table 'book' already exists.");
 });
 
 
@@ -82,14 +82,14 @@ test(function () {
 		$table->addIndex('id', Index::TYPE_INDEX);
 		$table->addIndex('id', Index::TYPE_INDEX);
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Index 'id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Index 'id' in table 'book' already exists.");
 
 	Assert::exception(function () {
 		$table = new Table('book');
 		$table->addIndex('id', Index::TYPE_INDEX);
 		$table->addIndex(new Index('id'));
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Index 'id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Index 'id' in table 'book' already exists.");
 });
 
 
@@ -99,12 +99,12 @@ test(function () {
 		$table->addForeignKey('author_id');
 		$table->addForeignKey('author_id');
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Foreign key 'author_id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Foreign key 'author_id' in table 'book' already exists.");
 
 	Assert::exception(function () {
 		$table = new Table('book');
 		$table->addForeignKey('author_id');
 		$table->addForeignKey(new ForeignKey('author_id', 'author_id', 'author', 'id'));
 
-	}, 'CzProject\\SqlSchema\\DuplicateException', "Foreign key 'author_id' in table 'book' already exists.");
+	}, CzProject\SqlSchema\DuplicateException::class, "Foreign key 'author_id' in table 'book' already exists.");
 });

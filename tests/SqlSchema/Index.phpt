@@ -27,5 +27,5 @@ test(function () {
 	Assert::exception(function () {
 		$index = new CzProject\SqlSchema\Index('', [], 'BLA');
 
-	}, 'CzProject\SqlSchema\OutOfRangeException', "Index type 'BLA' not found.");
+	}, CzProject\SqlSchema\OutOfRangeException::class, "Index type 'BLA' not found.");
 });

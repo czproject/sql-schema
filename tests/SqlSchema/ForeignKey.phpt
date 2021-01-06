@@ -32,10 +32,10 @@ test(function () {
 	Assert::exception(function () {
 		$foreignKey = new ForeignKey('fk_name', 'author_id', 'author', 'id');
 		$foreignKey->setOnUpdateAction('BLAH');
-	}, 'CzProject\SqlSchema\OutOfRangeException', "Action 'BLAH' is invalid.");
+	}, CzProject\SqlSchema\OutOfRangeException::class, "Action 'BLAH' is invalid.");
 
 	Assert::exception(function () {
 		$foreignKey = new ForeignKey('fk_name', 'author_id', 'author', 'id');
 		$foreignKey->setOnDeleteAction('BLAH');
-	}, 'CzProject\SqlSchema\OutOfRangeException', "Action 'BLAH' is invalid.");
+	}, CzProject\SqlSchema\OutOfRangeException::class, "Action 'BLAH' is invalid.");
 });
