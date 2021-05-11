@@ -21,9 +21,9 @@
 
 
 		/**
-		 * @param  string
-		 * @param  string[]|string
-		 * @param  string
+		 * @param  string $name
+		 * @param  string[]|string $columns
+		 * @param  string $type
 		 */
 		public function __construct($name, $columns = [], $type = self::TYPE_INDEX)
 		{
@@ -50,7 +50,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $type
 		 * @return self
 		 */
 		public function setType($type)
@@ -80,7 +80,7 @@
 
 
 		/**
-		 * @param  IndexColumn|string
+		 * @param  IndexColumn|string $column
 		 * @return IndexColumn
 		 */
 		public function addColumn($column)

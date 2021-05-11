@@ -16,7 +16,7 @@
 		/** @var string[] */
 		private $columns = [];
 
-		/** @var string */
+		/** @var string|NULL */
 		private $targetTable;
 
 		/** @var string[] */
@@ -30,10 +30,10 @@
 
 
 		/**
-		 * @param  string
-		 * @param  string[]|string
-		 * @param  string
-		 * @param  string[]|string
+		 * @param  string $name
+		 * @param  string[]|string $columns
+		 * @param  string|NULL $targetTable
+		 * @param  string[]|string $targetColumns
 		 */
 		public function __construct($name, $columns, $targetTable, $targetColumns)
 		{
@@ -68,12 +68,13 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $column
 		 * @return self
 		 */
 		public function addColumn($column)
 		{
-			return $this->columns[] = $column;
+			$this->columns[] = $column;
+			return $this;
 		}
 
 
@@ -87,7 +88,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string|NULL $targetTable
 		 * @return self
 		 */
 		public function setTargetTable($targetTable)
@@ -98,7 +99,7 @@
 
 
 		/**
-		 * @return string
+		 * @return string|NULL
 		 */
 		public function getTargetTable()
 		{
@@ -107,12 +108,13 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $targetColumn
 		 * @return self
 		 */
 		public function addTargetColumn($targetColumn)
 		{
-			return $this->targetColumns[] = $targetColumn;
+			$this->targetColumns[] = $targetColumn;
+			return $this;
 		}
 
 
@@ -126,7 +128,7 @@
 
 
 		/**
-		 * @param  int
+		 * @param  string $onUpdateAction
 		 * @return self
 		 */
 		public function setOnUpdateAction($onUpdateAction)
@@ -150,7 +152,7 @@
 
 
 		/**
-		 * @param  int
+		 * @param  string $onDeleteAction
 		 * @return self
 		 */
 		public function setOnDeleteAction($onDeleteAction)
@@ -174,7 +176,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $action
 		 * @return bool
 		 */
 		private function validateAction($action)

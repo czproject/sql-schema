@@ -19,9 +19,9 @@
 
 
 		/**
-		 * @param  string
-		 * @param  string
-		 * @param  int|NULL
+		 * @param  string $name
+		 * @param  string $order
+		 * @param  int|NULL $length
 		 */
 		public function __construct($name, $order = self::ASC, $length = NULL)
 		{
@@ -32,7 +32,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $name
 		 * @return self
 		 */
 		public function setName($name)
@@ -52,7 +52,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $order
 		 * @return self
 		 */
 		public function setOrder($order)
@@ -78,7 +78,7 @@
 
 
 		/**
-		 * @param  int|NULL
+		 * @param  int|NULL $length
 		 * @return self
 		 */
 		public function setLength($length)

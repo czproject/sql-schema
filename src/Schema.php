@@ -5,12 +5,12 @@
 
 	class Schema
 	{
-		/** @var array  [name => Table] */
+		/** @var array<string, Table>  [name => Table] */
 		private $tables = [];
 
 
 		/**
-		 * @param  string|Table
+		 * @param  string|Table $name
 		 * @return Table
 		 */
 		public function addTable($name)
@@ -34,7 +34,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string $name
 		 * @return Table|NULL
 		 */
 		public function getTable($name)

@@ -11,13 +11,13 @@
 		/** @var string */
 		private $name;
 
-		/** @var string */
+		/** @var string|NULL */
 		private $type;
 
-		/** @var array */
+		/** @var array<scalar> */
 		private $parameters = [];
 
-		/** @var array */
+		/** @var array<string, scalar|NULL> */
 		private $options = [];
 
 		/** @var bool */
@@ -34,10 +34,10 @@
 
 
 		/**
-		 * @param  string
-		 * @param  string|NULL
-		 * @param  array|string|NULL
-		 * @param  array  [OPTION => VALUE, OPTION2]
+		 * @param  string $name
+		 * @param  string|NULL $type
+		 * @param  array<scalar>|NULL $parameters
+		 * @param  array<string|int, scalar|NULL> $options  [OPTION => VALUE, OPTION2]
 		 */
 		public function __construct($name, $type, array $parameters = NULL, array $options = [])
 		{
@@ -58,7 +58,7 @@
 
 
 		/**
-		 * @param  string
+		 * @param  string|NULL $type
 		 * @return self
 		 */
 		public function setType($type)
@@ -69,7 +69,7 @@
 
 
 		/**
-		 * @return string
+		 * @return string|NULL
 		 */
 		public function getType()
 		{
@@ -78,7 +78,7 @@
 
 
 		/**
-		 * @param  string|array|NULL
+		 * @param  scalar|array<scalar>|NULL $parameters
 		 * @return self
 		 */
 		public function setParameters($parameters)
@@ -96,7 +96,7 @@
 
 
 		/**
-		 * @return array
+		 * @return array<mixed>
 		 */
 		public function getParameters()
 		{
@@ -105,8 +105,8 @@
 
 
 		/**
-		 * @param  string
-		 * @param  scalar|NULL
+		 * @param  string $option
+		 * @param  scalar|NULL $value
 		 * @return self
 		 */
 		public function addOption($option, $value = NULL)
@@ -117,7 +117,7 @@
 
 
 		/**
-		 * @param  array
+		 * @param  array<string|int, scalar|NULL> $options
 		 * @return self
 		 */
 		public function setOptions(array $options)
@@ -126,7 +126,7 @@
 
 			foreach ($options as $k => $v) {
 				if (is_int($k)) {
-					$this->options[$v] = NULL;
+					$this->options[(string) $v] = NULL;
 
 				} else {
 					$this->options[$k] = $v;
@@ -138,7 +138,7 @@
 
 
 		/**
-		 * @return array
+		 * @return array<string, scalar|NULL>
 		 */
 		public function getOptions()
 		{
@@ -147,7 +147,8 @@
 
 
 		/**
-		 * @return array
+		 * @param  string $name
+		 * @return bool
 		 */
 		public function hasOption($name)
 		{
@@ -156,7 +157,7 @@
 
 
 		/**
-		 * @param  bool
+		 * @param  bool $nullable
 		 * @return self
 		 */
 		public function setNullable($nullable = TRUE)
@@ -176,7 +177,7 @@
 
 
 		/**
-		 * @param  bool
+		 * @param  bool $autoIncrement
 		 * @return self
 		 */
 		public function setAutoIncrement($autoIncrement = TRUE)
@@ -196,7 +197,7 @@
 
 
 		/**
-		 * @param  scalar|NULL
+		 * @param  scalar|NULL $defaultValue
 		 * @return self
 		 */
 		public function setDefaultValue($defaultValue)
@@ -216,7 +217,7 @@
 
 
 		/**
-		 * @param  string|NULL
+		 * @param  string|NULL $comment
 		 * @return self
 		 */
 		public function setComment($comment)

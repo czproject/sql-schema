@@ -51,11 +51,19 @@ test(function () {
 
 	$table->addColumn('id', 'INT');
 	$table->addIndex('id');
-	$table->addForeignKey('author_id');
+	$table->addForeignKey('author_id', [], 'author');
 
 	Assert::notSame(NULL, $table->getColumn('id'));
 	Assert::notSame(NULL, $table->getIndex('id'));
 	Assert::notSame(NULL, $table->getForeignKey('author_id'));
+});
+
+
+test(function () {
+	$table = new Table('book');
+
+	$table->addColumn('id', NULL); // no specified type
+	Assert::notSame(NULL, $table->getColumn('id'));
 });
 
 
@@ -96,14 +104,14 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		$table = new Table('book');
-		$table->addForeignKey('author_id');
-		$table->addForeignKey('author_id');
+		$table->addForeignKey('author_id', [], 'author');
+		$table->addForeignKey('author_id', [], 'author');
 
 	}, CzProject\SqlSchema\DuplicateException::class, "Foreign key 'author_id' in table 'book' already exists.");
 
 	Assert::exception(function () {
 		$table = new Table('book');
-		$table->addForeignKey('author_id');
+		$table->addForeignKey('author_id', [], 'author');
 		$table->addForeignKey(new ForeignKey('author_id', 'author_id', 'author', 'id'));
 
 	}, CzProject\SqlSchema\DuplicateException::class, "Foreign key 'author_id' in table 'book' already exists.");
