@@ -1,6 +1,5 @@
 <?php
 
-use CzProject\SqlSchema\IndexColumn;
 use Tester\Assert;
 
 require __DIR__ . '/../bootstrap.php';
