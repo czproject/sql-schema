@@ -75,6 +75,17 @@
 
 
 		/**
+		 * @param  string $name
+		 * @return self
+		 */
+		public function removeOption($name)
+		{
+			unset($this->options[$name]);
+			return $this;
+		}
+
+
+		/**
 		 * @return array<string, string>
 		 */
 		public function getOptions()
@@ -107,6 +118,24 @@
 			}
 
 			return $this->columns[$name] = $column;
+		}
+
+
+		/**
+		 * @param  string|Column $name
+		 * @return void
+		 */
+		public function removeColumn($name)
+		{
+			if ($name instanceof Column) {
+				$name = $name->getName();
+			}
+
+			if (!isset($this->columns[$name])) {
+				throw new MissingException("Column '$name' in table '{$this->getName()}' not exists.");
+			}
+
+			unset($this->columns[$name]);
 		}
 
 
@@ -160,6 +189,24 @@
 
 
 		/**
+		 * @param  string|Index $name
+		 * @return void
+		 */
+		public function removeIndex($name)
+		{
+			if ($name instanceof Index) {
+				$name = $name->getName();
+			}
+
+			if (!isset($this->indexes[$name])) {
+				throw new MissingException("Index '$name' in table '{$this->getName()}' not exists.");
+			}
+
+			unset($this->indexes[$name]);
+		}
+
+
+		/**
 		 * @param  string $name
 		 * @return Index|NULL
 		 */
@@ -206,6 +253,24 @@
 			}
 
 			return $this->foreignKeys[$name] = $foreignKey;
+		}
+
+
+		/**
+		 * @param  string|ForeignKey $name
+		 * @return void
+		 */
+		public function removeForeignKey($name)
+		{
+			if ($name instanceof ForeignKey) {
+				$name = $name->getName();
+			}
+
+			if (!isset($this->foreignKeys[$name])) {
+				throw new MissingException("Foreign key '$name' in table '{$this->getName()}' not exists.");
+			}
+
+			unset($this->foreignKeys[$name]);
 		}
 
 

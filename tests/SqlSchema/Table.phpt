@@ -87,6 +87,22 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		$table = new Table('book');
+		$table->removeColumn('id');
+
+	}, CzProject\SqlSchema\MissingException::class, "Column 'id' in table 'book' not exists.");
+
+	$table = new Table('book');
+	$column = $table->addColumn('id', 'INT');
+	Assert::same(1, count($table->getColumns()));
+
+	$table->removeColumn($column);
+	Assert::same(0, count($table->getColumns()));
+});
+
+
+test(function () {
+	Assert::exception(function () {
+		$table = new Table('book');
 		$table->addIndex('id', Index::TYPE_INDEX);
 		$table->addIndex('id', Index::TYPE_INDEX);
 
@@ -104,6 +120,22 @@ test(function () {
 test(function () {
 	Assert::exception(function () {
 		$table = new Table('book');
+		$table->removeIndex('id');
+
+	}, CzProject\SqlSchema\MissingException::class, "Index 'id' in table 'book' not exists.");
+
+	$table = new Table('book');
+	$index = $table->addIndex('id', Index::TYPE_INDEX);
+	Assert::same(1, count($table->getIndexes()));
+
+	$table->removeIndex($index);
+	Assert::same(0, count($table->getIndexes()));
+});
+
+
+test(function () {
+	Assert::exception(function () {
+		$table = new Table('book');
 		$table->addForeignKey('author_id', [], 'author');
 		$table->addForeignKey('author_id', [], 'author');
 
@@ -115,4 +147,20 @@ test(function () {
 		$table->addForeignKey(new ForeignKey('author_id', 'author_id', 'author', 'id'));
 
 	}, CzProject\SqlSchema\DuplicateException::class, "Foreign key 'author_id' in table 'book' already exists.");
+});
+
+
+test(function () {
+	Assert::exception(function () {
+		$table = new Table('book');
+		$table->removeForeignKey('author_id');
+
+	}, CzProject\SqlSchema\MissingException::class, "Foreign key 'author_id' in table 'book' not exists.");
+
+	$table = new Table('book');
+	$foreignKey = $table->addForeignKey('author_id', [], 'author');
+	Assert::same(1, count($table->getForeignKeys()));
+
+	$table->removeForeignKey($foreignKey);
+	Assert::same(0, count($table->getForeignKeys()));
 });

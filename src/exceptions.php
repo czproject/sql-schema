@@ -18,6 +18,11 @@
 	}
 
 
+	class MissingException extends Exception
+	{
+	}
+
+
 	class OutOfRangeException extends Exception
 	{
 	}
