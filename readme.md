@@ -1,7 +1,9 @@
-
 # CzProject\SqlSchema
 
-[![Tests Status](https://github.com/czproject/sql-schema/workflows/Tests/badge.svg)](https://github.com/czproject/sql-schema/actions)
+[![Build Status](https://github.com/czproject/sql-schema/workflows/Build/badge.svg)](https://github.com/czproject/sql-schema/actions)
+[![Downloads this Month](https://img.shields.io/packagist/dm/czproject/sql-schema.svg)](https://packagist.org/packages/czproject/sql-schema)
+[![Latest Stable Version](https://poser.pugx.org/czproject/sql-schema/v/stable)](https://github.com/czproject/sql-schema/releases)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://github.com/czproject/sql-schema/blob/master/license.md)
 
 Library for describe of the database schema.
 
