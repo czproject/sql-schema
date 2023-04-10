@@ -7,12 +7,19 @@ require __DIR__ . '/../vendor/autoload.php';
 Tester\Environment::setup();
 
 
-function test($cb)
+/**
+ * @return void
+ */
+function test(callable $cb)
 {
 	$cb();
 }
 
 
+/**
+ * @param  object|object[] $obj
+ * @return mixed
+ */
 function format($obj)
 {
 	if (is_array($obj)) {
