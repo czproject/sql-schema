@@ -10,7 +10,7 @@
 		const ACTION_CASCADE = 'CASCADE';
 		const ACTION_SET_NULL = 'SET NULL';
 
-		/** @var string */
+		/** @var string|NULL */
 		private $name;
 
 		/** @var string[] */
@@ -30,7 +30,7 @@
 
 
 		/**
-		 * @param  string $name
+		 * @param  string|NULL $name
 		 * @param  string[]|string $columns
 		 * @param  string|NULL $targetTable
 		 * @param  string[]|string $targetColumns
@@ -59,7 +59,7 @@
 
 
 		/**
-		 * @return string
+		 * @return string|NULL
 		 */
 		public function getName()
 		{

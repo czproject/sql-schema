@@ -29,5 +29,8 @@ test(function () {
 test(function () {
 	$table = new Table('book');
 	$table->addColumn('id', 'INT');
-	Assert::null($table->validate());
+
+	Assert::noError(function () use ($table) {
+		$table->validate();
+	});
 });

@@ -10,7 +10,7 @@
 		const TYPE_UNIQUE = 'UNIQUE';
 		const TYPE_FULLTEXT = 'FULLTEXT';
 
-		/** @var string */
+		/** @var string|NULL */
 		private $name;
 
 		/** @var string */
@@ -21,7 +21,7 @@
 
 
 		/**
-		 * @param  string $name
+		 * @param  string|NULL $name
 		 * @param  string[]|string $columns
 		 * @param  string $type
 		 */
@@ -41,7 +41,7 @@
 
 
 		/**
-		 * @return string
+		 * @return string|NULL
 		 */
 		public function getName()
 		{
