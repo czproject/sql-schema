@@ -96,7 +96,7 @@
 
 
 		/**
-		 * @return array<mixed>
+		 * @return array<scalar>
 		 */
 		public function getParameters()
 		{
