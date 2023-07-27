@@ -59,7 +59,7 @@
 
 		/**
 		 * @param  string|NULL $type
-		 * @return self
+		 * @return $this
 		 */
 		public function setType($type)
 		{
@@ -79,7 +79,7 @@
 
 		/**
 		 * @param  scalar|array<scalar>|NULL $parameters
-		 * @return self
+		 * @return $this
 		 */
 		public function setParameters($parameters)
 		{
@@ -107,7 +107,7 @@
 		/**
 		 * @param  string $option
 		 * @param  scalar|NULL $value
-		 * @return self
+		 * @return $this
 		 */
 		public function addOption($option, $value = NULL)
 		{
@@ -118,7 +118,7 @@
 
 		/**
 		 * @param  array<string|int, scalar|NULL> $options
-		 * @return self
+		 * @return $this
 		 */
 		public function setOptions(array $options)
 		{
@@ -158,7 +158,7 @@
 
 		/**
 		 * @param  bool $nullable
-		 * @return self
+		 * @return $this
 		 */
 		public function setNullable($nullable = TRUE)
 		{
@@ -178,7 +178,7 @@
 
 		/**
 		 * @param  bool $autoIncrement
-		 * @return self
+		 * @return $this
 		 */
 		public function setAutoIncrement($autoIncrement = TRUE)
 		{
@@ -198,7 +198,7 @@
 
 		/**
 		 * @param  scalar|NULL $defaultValue
-		 * @return self
+		 * @return $this
 		 */
 		public function setDefaultValue($defaultValue)
 		{
@@ -218,7 +218,7 @@
 
 		/**
 		 * @param  string|NULL $comment
-		 * @return self
+		 * @return $this
 		 */
 		public function setComment($comment)
 		{

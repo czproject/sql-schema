@@ -33,7 +33,7 @@
 
 		/**
 		 * @param  string $name
-		 * @return self
+		 * @return $this
 		 */
 		public function setName($name)
 		{
@@ -53,7 +53,7 @@
 
 		/**
 		 * @param  string $order
-		 * @return self
+		 * @return $this
 		 */
 		public function setOrder($order)
 		{
@@ -79,7 +79,7 @@
 
 		/**
 		 * @param  int|NULL $length
-		 * @return self
+		 * @return $this
 		 */
 		public function setLength($length)
 		{

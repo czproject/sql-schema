@@ -51,7 +51,7 @@
 
 		/**
 		 * @param  string $type
-		 * @return self
+		 * @return $this
 		 */
 		public function setType($type)
 		{

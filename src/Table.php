@@ -44,7 +44,7 @@
 
 		/**
 		 * @param  string|NULL $comment
-		 * @return self
+		 * @return $this
 		 */
 		public function setComment($comment)
 		{
@@ -65,7 +65,7 @@
 		/**
 		 * @param  string $name
 		 * @param  string $value
-		 * @return self
+		 * @return $this
 		 */
 		public function setOption($name, $value)
 		{
@@ -76,7 +76,7 @@
 
 		/**
 		 * @param  string $name
-		 * @return self
+		 * @return $this
 		 */
 		public function removeOption($name)
 		{

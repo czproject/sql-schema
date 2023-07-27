@@ -69,7 +69,7 @@
 
 		/**
 		 * @param  string $column
-		 * @return self
+		 * @return $this
 		 */
 		public function addColumn($column)
 		{
@@ -89,7 +89,7 @@
 
 		/**
 		 * @param  string|NULL $targetTable
-		 * @return self
+		 * @return $this
 		 */
 		public function setTargetTable($targetTable)
 		{
@@ -109,7 +109,7 @@
 
 		/**
 		 * @param  string $targetColumn
-		 * @return self
+		 * @return $this
 		 */
 		public function addTargetColumn($targetColumn)
 		{
@@ -129,7 +129,7 @@
 
 		/**
 		 * @param  string $onUpdateAction
-		 * @return self
+		 * @return $this
 		 */
 		public function setOnUpdateAction($onUpdateAction)
 		{
@@ -153,7 +153,7 @@
 
 		/**
 		 * @param  string $onDeleteAction
-		 * @return self
+		 * @return $this
 		 */
 		public function setOnDeleteAction($onDeleteAction)
 		{
