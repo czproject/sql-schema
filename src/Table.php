@@ -97,7 +97,7 @@
 		/**
 		 * @param  string|Column $name
 		 * @param  string|NULL $type
-		 * @param  array<scalar>|NULL $parameters
+		 * @param  array<int|float|string>|NULL $parameters
 		 * @param  array<string|int, scalar|NULL> $options OPTION => NULL
 		 * @return Column
 		 */

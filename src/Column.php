@@ -14,7 +14,7 @@
 		/** @var string|NULL */
 		private $type;
 
-		/** @var array<scalar> */
+		/** @var array<int|float|string> */
 		private $parameters = [];
 
 		/** @var array<string, scalar|NULL> */
@@ -36,7 +36,7 @@
 		/**
 		 * @param  string $name
 		 * @param  string|NULL $type
-		 * @param  array<scalar>|NULL $parameters
+		 * @param  array<int|float|string>|NULL $parameters
 		 * @param  array<string|int, scalar|NULL> $options  [OPTION => VALUE, OPTION2]
 		 */
 		public function __construct($name, $type, array $parameters = NULL, array $options = [])
@@ -78,7 +78,7 @@
 
 
 		/**
-		 * @param  scalar|array<scalar>|NULL $parameters
+		 * @param  int|float|string|array<int|float|string>|NULL $parameters
 		 * @return $this
 		 */
 		public function setParameters($parameters)
@@ -96,7 +96,7 @@
 
 
 		/**
-		 * @return array<scalar>
+		 * @return array<int|float|string>
 		 */
 		public function getParameters()
 		{
