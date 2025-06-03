@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use CzProject\SqlSchema\Schema;
 use CzProject\SqlSchema\Table;
 use Tester\Assert;
