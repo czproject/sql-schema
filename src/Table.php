@@ -103,7 +103,7 @@
 		 * @param  array<string|int, scalar|NULL> $options OPTION => NULL
 		 * @return Column
 		 */
-		public function addColumn($name, $type = NULL, array $parameters = NULL, array $options = [])
+		public function addColumn($name, $type = NULL, ?array $parameters = NULL, array $options = [])
 		{
 			$column = NULL;
 

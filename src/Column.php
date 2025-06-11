@@ -41,7 +41,7 @@
 		 * @param  array<int|float|string>|NULL $parameters
 		 * @param  array<string|int, scalar|NULL> $options  [OPTION => VALUE, OPTION2]
 		 */
-		public function __construct($name, $type, array $parameters = NULL, array $options = [])
+		public function __construct($name, $type, ?array $parameters = NULL, array $options = [])
 		{
 			$this->name = $name;
 			$this->setType($type);
