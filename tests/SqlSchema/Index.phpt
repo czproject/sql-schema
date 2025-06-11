@@ -15,7 +15,7 @@ test(function () {
 	Assert::same('PRIMARY', $index->getType());
 	Assert::same([
 		'id ASC'
-	], format($index->getColumns()));
+	], formatIndexColumns($index->getColumns()));
 });
 
 

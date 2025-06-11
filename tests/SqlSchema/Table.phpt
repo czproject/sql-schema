@@ -40,7 +40,7 @@ test(function () {
 
 	Assert::same([
 		'CONSTRAINT  FOREIGN KEY (author_id) REFERENCES author (id)',
-	], format($table->getForeignKeys()));
+	], formatForeignKeys($table->getForeignKeys()));
 });
 
 

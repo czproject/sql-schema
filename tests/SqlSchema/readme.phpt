@@ -28,5 +28,5 @@ test(function () {
 			'PRIMARY  (id ASC)',
 			'UNIQUE name_author_id (name ASC, author_id ASC)',
 		],
-	], format($schema));
+	], formatSchema($schema));
 });
