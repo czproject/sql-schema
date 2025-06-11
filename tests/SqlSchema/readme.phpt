@@ -18,7 +18,7 @@ test(function () {
 	$table->addIndex(NULL, 'id', Index::TYPE_PRIMARY);
 	$table->addIndex('name_author_id', ['name', 'author_id'], Index::TYPE_UNIQUE);
 
-	$schema->getTables();
+	$schema->getTables(); // @phpstan-ignore method.resultUnused
 
 	Assert::same([
 		'book' => [

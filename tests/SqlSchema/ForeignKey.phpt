@@ -22,8 +22,8 @@ test(function () {
 
 test(function () {
 	$foreignKey = new ForeignKey('fk_name', 'author_id', 'author', 'id');
-	$foreignKey->setOnUpdateAction($foreignKey::ACTION_NO_ACTION);
-	$foreignKey->setOnDeleteAction($foreignKey::ACTION_SET_NULL);
+	$foreignKey->setOnUpdateAction(ForeignKey::ACTION_NO_ACTION);
+	$foreignKey->setOnDeleteAction(ForeignKey::ACTION_SET_NULL);
 
 	Assert::same($foreignKey::ACTION_NO_ACTION, $foreignKey->getOnUpdateAction());
 	Assert::same($foreignKey::ACTION_SET_NULL, $foreignKey->getOnDeleteAction());
